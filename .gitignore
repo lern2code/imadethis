@@ -1,0 +1,8 @@
+# compiled output
+/dist
+/tmp
+
+*.yml
+
+# Dependency directories
+node_modules/
