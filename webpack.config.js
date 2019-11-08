@@ -22,9 +22,46 @@ module.exports = {
             const html = highlight.highlight(lang, code).value;
             return `<span class="hljs">${html}</span>`;
           },
+          gfm: true,
+          breaks: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
         },
       },
     ],
   },
-]}
+  {  test: /\.(gif|png|jpe?g|svg)$/i,
+   use: [
+     'file-loader',
+     {
+       loader: 'image-webpack-loader',
+       options: {
+         disable: true, // webpack@2.x and newer
+       },
+     },
+   ],
+ },
+]},
+devtool: 'source-map',
+  devServer: {
+    contentBase: [ `${__dirname}`],
+    compress: true,
+    host: '0.0.0.0',
+    port: 8080,
+    https: true,
+    index: 'index.html',
+    historyApiFallback: true,
+
+    overlay: {
+      warnings: true,
+      errors: true
+    },
+    watchOptions: {
+      poll: false
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+  }
 }
