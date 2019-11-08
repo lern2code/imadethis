@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {ntry1: ['./ent.js',],ntry2: ['./ent.js',]},
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './'),
     filename: '[name].js'
   },
   module: {
