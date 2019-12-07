@@ -1,7 +1,10 @@
 const highlight = require('highlight.js');
 const path = require('path');
 module.exports = {
-  entry: {ntry1: ['./ent.js',],ntry2: ['./ent.js',]},
+  entry: {ntry1: ['./ent.js',],
+  ntry2a: ['./ent2a.js',],
+  ntry2b: ['./ent2b.js',]
+},
   output: {
     path: path.resolve(__dirname, './'),
     filename: '[name].js'
